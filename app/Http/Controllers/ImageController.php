@@ -24,12 +24,12 @@ class ImageController extends Controller
             $image = Image::make($imagePath);
 
             $image->greyscale()
-                ->brightness(35)
+                ->brightness(32)
                 ->sharpen(100)->contrast(40)->pixelate(1)->colorize(50, 50, 50);
 
             $image->sharpen(100)->colorize(50, 50, 50);
-
-            $image->blur(1);
+            $image->sharpen(100);
+            $image->blur(8);
             $convertImageName = time() . '_convert_' . $filename;
             $sketchPath = public_path('images/'. $convertImageName);
             $image->save($sketchPath);

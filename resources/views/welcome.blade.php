@@ -24,6 +24,22 @@
             overflow: hidden;
         }
 
+        .convertpicture {
+            width: 30% !important;
+            height: 30% !important;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            border: 2px dashed currentcolor;
+            cursor: pointer;
+            font-family: sans-serif;
+            transition: color 300ms ease-in-out, background 300ms ease-in-out;
+            outline: none;
+            overflow: hidden;
+        }
+
         .picture:hover {
             color: #777;
             background: #ccc;
@@ -79,12 +95,12 @@
         <div style="display: flex; column-gap: 50px; flex-wrap: wrap; align-items: center; justify-content: center;">
            
             @if ($orginal ?? false)
-                <label class="picture" for="image" tabIndex="0">
+                <label class="convertpicture" for="image" tabIndex="0">
                     <img src="{{ $orginal }}" class="picture__img">
                 </label>
             @endif
             @if ($convert ?? false)
-                <label class="picture" for="image" tabIndex="0">
+                <label class="convertpicture" for="image" tabIndex="0">
                     <img src="{{ $convert }}" class="picture__img">
                 </label>
             @endif
